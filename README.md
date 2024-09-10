@@ -24,15 +24,3 @@ This project explores the community discussions and trends in the subreddit [r/d
 3. **Exploratory Data Analysis (EDA)**: Conducted word frequency analysis and created visualizations like word clouds and bar plots.
 4. **Sentiment Analysis** (Optional): Attempted sentiment analysis using VADER, but faced compatibility issues with the current setup.
 5. **Results and Visualization**: Visualized the most common words in titles and post bodies, and identified key trends.
-
-## Visualizations
-
-- **Word Cloud of Titles**: ![Word Cloud Titles](images/word_cloud_titles.png)
-- **Top 10 Most Common Words in Bodies**: ![Bar Plot Common Words](images/bar_plot_common_words.png)
-
-## How to Run the Project
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/Reddit-Datahoarder-Analysis.git
-   cd Reddit-Datahoarder-Analysis
