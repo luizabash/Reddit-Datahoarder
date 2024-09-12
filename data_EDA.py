@@ -1,4 +1,3 @@
-# Import necessary libraries
 import re
 import string
 import nltk
@@ -9,14 +8,11 @@ from collections import Counter
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
-# Download necessary NLTK data
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-# Initialize Lemmatizer
 lemmatizer = WordNetLemmatizer()
 
-# Define an expanded list of stop words
 stop_words = set(stopwords.words('english'))
 # Add custom stop words specific to your dataset
 custom_stop_words = set(["sep", "d", "would", "like", "one", "also", "new", "many", "us", "could"])
@@ -24,7 +20,7 @@ stop_words.update(custom_stop_words)
 
 # Function to clean the text
 def preprocess_text(text):
-    # Ensure the text is a string
+   
     text = str(text)
     
     # Remove URLs
@@ -50,14 +46,11 @@ def preprocess_text(text):
     
     return text
 
-# Load your CSV file (replace with your actual file path if necessary)
 data = pd.read_csv('datahoarder_posts_cleaned.csv')
 
-# Apply preprocessing to the 'title' and 'body' columns
 data['cleaned_title'] = data['title'].apply(preprocess_text)
 data['cleaned_body'] = data['body'].apply(preprocess_text)
 
-# Display the first few rows to check the cleaned text
 print(data[['cleaned_title', 'cleaned_body']].head())
 
 # Basic statistics about the dataset
@@ -69,7 +62,6 @@ print(f"Average length of bodies: {data['cleaned_body'].apply(len).mean():.2f} c
 all_titles = ' '.join(data['cleaned_title'])
 all_bodies = ' '.join(data['cleaned_body'])
 
-# Use Counter to count word frequencies
 title_word_freq = Counter(all_titles.split())
 body_word_freq = Counter(all_bodies.split())
 
